@@ -28,7 +28,6 @@ sudo pip install shwdowsocks
 
 ```
 sudo sslocal -c shadowsocks.json -d start 
-
 ```
 
 #### privoxy
@@ -43,5 +42,4 @@ sudo apt-get install privoxy
 
 ```
 forward-socks5 / 127.0.0.1:1080 .
-
 ```
