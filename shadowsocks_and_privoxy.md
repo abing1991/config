@@ -1,6 +1,6 @@
-###How To Use Shadowsocks Client For Proxy
+### How To Use Shadowsocks Client For Proxy
 
-####Shadowsocks 
+#### Shadowsocks 
 
 - install 
 
@@ -31,7 +31,7 @@ sudo sslocal -c shadowsocks.json -d start
 
 ```
 
-####privoxy
+#### privoxy
 
 - install privoxy 
 
