@@ -50,6 +50,10 @@ set history=500
 filetype plugin on
 filetype indent on
 
+
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 " Set to auto read when a file is changed from the outside
 set autoread
 
@@ -136,6 +140,15 @@ set tm=500
 set foldcolumn=1
 
 
+" 显示tab和空格
+set list
+" 设置tab和空格样式
+set lcs=tab:\|\ ,nbsp:%,trail:-
+" 设定行首tab为灰色
+highlight LeaderTab guifg=#111111
+" 匹配行首tab
+match LeaderTab /^\t/
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -153,8 +166,9 @@ colorscheme molokai
 set encoding=utf8
 
 " Use Unix as the standard file type
-set ffs=unix,dos,mac
+" set ffs=unix,dos,mac
 
+set ff=unix
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -411,3 +425,6 @@ endfunction
 " if has("autocmd")
 "   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 "endif
+autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:p:t"))
+autocmd VimLeave * call system("tmux rename-window " . "bash")
+set tags=./tags;/
