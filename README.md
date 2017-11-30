@@ -1,3 +1,3 @@
-#First commit 
+# MYCONFIG
 ___
 myconfig
